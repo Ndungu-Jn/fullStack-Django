@@ -26,4 +26,16 @@
 -- a frontend folder has been created 
 4. continue following the steps in intsalling  -- cd frontend -- npm install 
 -- start the server by -- npm run dev -- now its up and running
+//
+//
+//
+NOW CONNECTING THE 2 -- BACKEND AND frontend
+1.for this I use the cors headers -- -- python -m pip install django-cors-headers
+2.cd into the backend folder, that is in the terminal -- activate the venv
+3. go to settings in main app and add the corsheaders,after the static files then  after which run the install.
+4.-- go to the middleware again in settings
+-- now include this 'corsheaders.middleware.CorsMiddleware', right above the 'Common Middleware'
 
+--
+1. now, which domains are allowed. for that I use the CORS_ALLOWED_ORIGINS
+--right underneath the MIDDLEWARE. add the  CORS_ALLOWED_ORIGINS[] inside there add the urls to be accesed. i.e in this case its the vite+react page Url.
