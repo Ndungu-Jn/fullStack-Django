@@ -1,0 +1,18 @@
+1.go to the folder
+2.create a virtual environment -- python -m pip install virtualenv  -- python -m venv venv
+3.Activate the environment -- venv/scripts/activate -- this is for anytime I wanna use the backend
+4. Now intsalling some packages -- inside the environment now.
+-- django -- python -m pip install Django
+
+5.After the installation. starting the project. -- django-admin startproject crud . -- the dot ensures there are no nested folders
+6.inside the project now I include other apps. in this case APIS app --  python manage.py startapp api
+7.register the api app to the base app that is the crud -- go to settings in the crud and edit installed apps -- add the 'api'
+8. ensure all files used in crud are present in api i.e the URL FILE. copy the code but exclude the path, let the object be empty.
+9. inside the main URLS import include and add the path to the api key
+//
+10. now set up the database
+-- python manage.py makemigrations
+-- python manage.py migrate
+//
+11.lets see if it all up and runnig
+-- python manage.py runserver
