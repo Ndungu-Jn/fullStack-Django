@@ -16,3 +16,14 @@
 //
 11.lets see if it all up and runnig
 -- python manage.py runserver
+
+//
+//
+1.creating the first react setup using vite
+-- npm create vite@latest
+2.give the name of the project -- in this case its frontend
+3. now select react and after that the Javascript + swc -- speed web compiler
+-- a frontend folder has been created 
+4. continue following the steps in intsalling  -- cd frontend -- npm install 
+-- start the server by -- npm run dev -- now its up and running
+
