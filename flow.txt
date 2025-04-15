@@ -54,3 +54,6 @@ pages
 --
 --create a components folder inside the src folder -- its where I am going to put my pages i.e the home page,delete,edit,create and edit
 -- go now to the app.jsx and remove the contents and imports of the images. in readiness for project
+
+app,jsx
+--creat routes and in them create a route ... remember to import the page from the components folder
