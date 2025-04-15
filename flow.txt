@@ -90,3 +90,14 @@ write the classes for the models on how the table will look like
 -- create the table trhough migration -- python manage.py makemigrations
 -- mifrate -- python manage.py migrate
 
+in order to access tye django admin, create a super user -- python manage,py createsuperuser
+after creating access the admin panel by starting the backend server -- python manage.py runserver
+
+-- register all the tables to be seen and modified in the admin file
+--import all from model
+from .models import *
+# Register your models here.
+admin.site.register(Country) -- how to register a site do the admin panel
+now add informationa as required
+
+
