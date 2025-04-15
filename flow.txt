@@ -75,4 +75,11 @@ removed the list nad the box, to give room to my own design
 
 replaced the navigationlists with <Menu> as imported
 
-now editiing the NAVbar -- remove the draft and email list. change the names and noe getting an icon from material UI ;
+now editiing the NAVbar -- remove the draft and email list. change the names and now getting an icon from material UI ;
+
+--  providing the links to the menu --get it from -- import {Link} from 'react-router'
+then on where the link is clickable use --components={Link} to="/" --the slash in this case representing the home page
+
+to know the current location use the importation <import {Link, useLocation} from 'react-router'
+
+modified the short menu -- added a const that takes a boolean for the usestate

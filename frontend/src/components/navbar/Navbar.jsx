@@ -1,16 +1,26 @@
-import * as React from "react";
+import { React, useState } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import AppBar from "@mui/material/AppBar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
+import { IconButton } from "@mui/material";
+import MenuOpenIcon from "@mui/icons-material/MenuOpen";
+import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "./menu";
+import ShortMenu from "./ShortMenu";
+import logo from "../../assets/Logo cbi App.png";
 
 const drawerWidth = 240;
+const shortDrawerWidth = 80;
 
 export default function Navbar({ content }) {
+  const [isBigMenu, setIsBigMenu] = useState(false);
+
+  const changeMenu = () => {
+    setIsBigMenu(!isBigMenu);
+  };
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -19,24 +29,28 @@ export default function Navbar({ content }) {
         sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       >
         <Toolbar>
-          <Typography variant="h6" noWrap component="div">
-            Clipped drawer
-          </Typography>
+          <IconButton
+            onClick={changeMenu}
+            sx={{ marginRight: "30px", color: "white" }}
+          >
+            {isBigMenu ? <MenuOpenIcon /> : <MenuIcon />}
+          </IconButton>
+          <img width="10%" src={logo} />
         </Toolbar>
       </AppBar>
       <Drawer
         variant="permanent"
         sx={{
-          width: drawerWidth,
+          width: isBigMenu ? drawerWidth : shortDrawerWidth,
           flexShrink: 0,
           [`& .MuiDrawer-paper`]: {
-            width: drawerWidth,
+            width: isBigMenu ? drawerWidth : shortDrawerWidth,
             boxSizing: "border-box",
           },
         }}
       >
         <Toolbar />
-        <Menu />
+        {isBigMenu ? <Menu /> : <ShortMenu />}
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
