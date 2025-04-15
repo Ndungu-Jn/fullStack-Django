@@ -83,3 +83,10 @@ then on where the link is clickable use --components={Link} to="/" --the slash i
 to know the current location use the importation <import {Link, useLocation} from 'react-router'
 
 modified the short menu -- added a const that takes a boolean for the usestate
+
+
+Model for database
+write the classes for the models on how the table will look like
+-- create the table trhough migration -- python manage.py makemigrations
+-- mifrate -- python manage.py migrate
+
