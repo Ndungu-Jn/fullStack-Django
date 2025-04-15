@@ -57,3 +57,15 @@ pages
 
 app,jsx
 --creat routes and in them create a route ... remember to import the page from the components folder
+
+Creating NAVBAR
+1.Installing packages for material UI. -- go to the page --npm install @mui/material @emotion/react @emotion/styled
+-- Icons -- npm install @mui/icons-material
+DONE 
+
+create a folder navbar inside components for the navbar
+-- create a file named navbar.jsx and copy the code from material Ui -- clipped under the app bar is what I am using. change the name to navbar
+-- link this to the app.jsx and place the nav before the pages
+--remove the topograpy -- replace it with {content} -- also, add content to the navbar as a parameter.
+
+removed all CSS code in app.css and for the index  only the root code remails
