@@ -68,4 +68,11 @@ create a folder navbar inside components for the navbar
 -- link this to the app.jsx and place the nav before the pages
 --remove the topograpy -- replace it with {content} -- also, add content to the navbar as a parameter.
 
-removed all CSS code in app.css and for the index  only the root code remails
+removed all CSS code in app.css and for the index  only the root code remains
+removed the list nad the box, to give room to my own design
+
+-- under navbar - another file called menu.jsx the input our list -- in this case use material  ui and get nested list.
+
+replaced the navigationlists with <Menu> as imported
+
+now editiing the NAVbar -- remove the draft and email list. change the names and noe getting an icon from material UI ;
