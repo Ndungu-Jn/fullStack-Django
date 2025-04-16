@@ -116,6 +116,13 @@ django rest framework-- download  -- python -m pip install djangorestframework
 After installing add it to ISTALLED_APPS  in settings  'rest_framework'
 get a serializer.py file for the communication. write the classes.
 
+now to the view.py file -- working with the viewsets really simplifies things. in this case, I get viewsets from rest_framework
+Edit the view in the file
+
+url.py file
+-- have to get this -from rest_framework.routers import DefaultRouter- do as to make use of the simplified urls
+
+
 
 
 
