@@ -123,6 +123,12 @@ url.py file
 -- have to get this -from rest_framework.routers import DefaultRouter- do as to make use of the simplified urls
 
 
+now that the API is done.
+its time to access it form the front end --CONSUMING DATA
+1. install Axios -- helps us fetch data from the backend to the front end
+this has to ne installed in the front end -- npm  install axios
 
-
+2.in the componets create an axios.jsx file to have the code logic for fetching the api. this code will be usable severally even in the future.
+the code is up, in the bae url, put the one clickable for the backend. in this case its http://127.0.0.1:8000/
+the code is done for fetching the data.
 
