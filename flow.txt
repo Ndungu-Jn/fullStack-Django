@@ -101,3 +101,21 @@ admin.site.register(Country) -- how to register a site do the admin panel
 now add informationa as required
 
 
+CREATING API -- DJANGO REST FRAMEWORK
+steps;;1.explanation
+2.install django rest framework and add to settings
+3.create serializer
+4.create View, Create Url, checkout result in backend server
+
+EXPLANATION!!
+need a view.py -- for brings those this together. The requests.
+a serializer.py -- for making translation between the  backend and the frontend takes the JSON format to something the database can understand and viceversa
+a urls.py -- for defininng the webaddress I can get the API to get information
+
+django rest framework-- download  -- python -m pip install djangorestframework
+After installing add it to ISTALLED_APPS  in settings  'rest_framework'
+get a serializer.py file for the communication. write the classes.
+
+
+
+
