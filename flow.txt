@@ -132,3 +132,5 @@ this has to ne installed in the front end -- npm  install axios
 the code is up, in the bae url, put the one clickable for the backend. in this case its http://127.0.0.1:8000/
 the code is done for fetching the data.
 
+testing if the callis complete -- ensure the backend is running so as the frontend gets the api.
+
