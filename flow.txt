@@ -134,3 +134,10 @@ the code is done for fetching the data.
 
 testing if the callis complete -- ensure the backend is running so as the frontend gets the api.
 
+now to create forms using Material UI to the create page
+
+import box to the create.jsx
+
+inside components create a folder to hold forms. -- inside it add
+--Text.jsx file and get code from material Ui and edit to liking --use it for name and city
+--select.jsx form for the league and the country
