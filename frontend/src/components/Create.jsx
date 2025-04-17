@@ -4,6 +4,9 @@ import { Box, Typography } from "@mui/material";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import TextForm from "./forms/TextForm";
 import SelectForm from "./forms/SelectForm";
+import MultiSelectForm from "./forms/MultiSelectForm";
+import DescriptionForm from "./forms/Description";
+import Button from "@mui/material/Button";
 
 const Create = () => {
   const [country, setCountry] = useState([]);
@@ -47,15 +50,32 @@ const Create = () => {
       <Box className={"FormBox"}>
         <Box className={"FormArea"}>
           <TextForm label={"Club name"}></TextForm>
+          <Box sx={{ marginTop: "30px" }}>
+            <TextForm label={"City name"}></TextForm>
+          </Box>
+          <Box sx={{ marginTop: "30px" }}>
+            <SelectForm label={"League"} options={league}></SelectForm>
+          </Box>
+          <Box sx={{ marginTop: "30px" }}>
+            <Button variant="contained">Submit the data</Button>
+          </Box>
         </Box>
-        <Box className={"FormArea"}>
-          <TextForm label={"City name"}></TextForm>
-        </Box>
-        <Box className={"FormArea"}>
-          <SelectForm label={"League"} options={league}></SelectForm>
-        </Box>
+
         <Box className={"FormArea"}>
           <SelectForm label={"Country"} options={country}></SelectForm>
+          <Box sx={{ marginTop: "30px" }}>
+            <TextForm label={"Attendace"}></TextForm>
+          </Box>
+          <Box sx={{ marginTop: "30px" }}>
+            <MultiSelectForm
+              label={"Characteristics"}
+              options={characteristic}
+            ></MultiSelectForm>
+          </Box>
+        </Box>
+
+        <Box className={"FormArea"}>
+          <DescriptionForm label={"Description"} rows={9}></DescriptionForm>
         </Box>
       </Box>
     </div>

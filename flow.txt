@@ -141,3 +141,5 @@ import box to the create.jsx
 inside components create a folder to hold forms. -- inside it add
 --Text.jsx file and get code from material Ui and edit to liking --use it for name and city
 --select.jsx form for the league and the country
+--multiselect for the characteristics
+--descrription form for the Description
