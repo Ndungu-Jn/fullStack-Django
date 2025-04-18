@@ -28,7 +28,6 @@ export default function MultiSelectForm({
   onBlur,
 }) {
   const theme = useTheme();
-  const [] = React.useState([]);
 
   return (
     <div>

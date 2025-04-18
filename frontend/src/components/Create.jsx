@@ -39,12 +39,18 @@ const Create = () => {
   const formik = useFormik({
     initialValues: {
       name: "Haiya, Imework",
-      description: "",
-      country: "",
-      league: "",
-      attendance: "",
-      city: "",
-      characteristic: [],
+      description: "r rrsd",
+      country: 1,
+      league: 1,
+      attendance: 15000,
+      city: "this",
+      characteristic: [1, 2],
+    },
+
+    onSubmit: (values) => {
+      AxiosInstance.post(`footballclub `, values).then(() => {
+        console.log("successfull data submission");
+      });
     },
   });
 
@@ -52,83 +58,94 @@ const Create = () => {
 
   return (
     <div>
-      <Box className={"TopBar"}>
-        <AddBoxIcon></AddBoxIcon>
-        <Typography
-          sx={{ marginLeft: "15px", fontWeight: "bold" }}
-          variant="subtitle2"
-        >
-          Create a new club!!
-        </Typography>
-      </Box>
+      <form onSubmit={formik.handleSubmit}>
+        <Box className={"TopBar"}>
+          <AddBoxIcon></AddBoxIcon>
+          <Typography
+            sx={{ marginLeft: "15px", fontWeight: "bold" }}
+            variant="subtitle2"
+          >
+            Create a new club!!
+          </Typography>
+        </Box>
 
-      <Box className={"FormBox"}>
-        <Box className={"FormArea"}>
-          <TextForm
-            label={"Club name"}
-            name="name"
-            value={formik.values.name}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          ></TextForm>
-          <Box sx={{ marginTop: "30px" }}>
+        <Box className={"FormBox"}>
+          <Box className={"FormArea"}>
             <TextForm
-              label={"City name"}
-              name="city"
-              value={formik.values.city}
+              label={"Club name"}
+              name="name"
+              value={formik.values.name}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             ></TextForm>
+            <Box sx={{ marginTop: "30px" }}>
+              <TextForm
+                label={"City"}
+                name="city"
+                value={formik.values.city}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              ></TextForm>
+            </Box>
+            <Box sx={{ marginTop: "30px" }}>
+              <SelectForm
+                label={"League"}
+                options={league}
+                name="league"
+                value={formik.values.league}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              ></SelectForm>
+            </Box>
+            <Box sx={{ marginTop: "30px" }}>
+              <Button type="submit" variant="contained">
+                Submit the data
+              </Button>
+            </Box>
           </Box>
-          <Box sx={{ marginTop: "30px" }}>
+
+          <Box className={"FormArea"}>
             <SelectForm
-              label={"League"}
-              options={league}
-              name="league"
-              value={formik.values.league}
+              label={"Country"}
+              options={country}
+              name="country"
+              value={formik.values.country}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             ></SelectForm>
+            <Box sx={{ marginTop: "30px" }}>
+              <TextForm
+                label={"Attendance"}
+                name="attendance"
+                value={formik.values.attendance}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              ></TextForm>
+            </Box>
+            <Box sx={{ marginTop: "30px" }}>
+              <MultiSelectForm
+                label={"Characteristics"}
+                options={characteristic}
+                name="characteristic"
+                value={formik.values.characteristic}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              ></MultiSelectForm>
+            </Box>
           </Box>
-          <Box sx={{ marginTop: "30px" }}>
-            <Button variant="contained">Submit the data</Button>
-          </Box>
-        </Box>
 
-        <Box className={"FormArea"}>
-          <SelectForm
-            label={"Country"}
-            options={country}
-            name="country"
-            value={formik.values.country}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          ></SelectForm>
-          <Box sx={{ marginTop: "30px" }}>
-            <TextForm
-              label={"Attendance"}
-              name="attendance"
-              value={formik.values.attendance}
+          <Box className={"FormArea"}>
+            <DescriptionForm
+              label={"Description"}
+              rows={9}
+              name="description"
+              value={formik.values.description}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-            ></TextForm>
-          </Box>
-          <Box sx={{ marginTop: "30px" }}>
-            <MultiSelectForm
-              label={"Characteristics"}
-              options={characteristic}
-              name="characteristic"
-              value={formik.values.characteristic}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            ></MultiSelectForm>
+            ></DescriptionForm>
           </Box>
         </Box>
-
-        <Box className={"FormArea"}>
-          <DescriptionForm label={"Description"} rows={9}></DescriptionForm>
-        </Box>
-      </Box>
+      </form>
     </div>
   );
 };
