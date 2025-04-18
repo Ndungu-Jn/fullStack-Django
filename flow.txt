@@ -147,3 +147,7 @@ inside components create a folder to hold forms. -- inside it add
 
 ADDNG THE FUNCTIONALITY
 1. first off create a view for the footballclubview-- create a function for creating and then create a route in the Urls
+
+using formik to handle the data easily
+installing it -- npm install formik --save   --- handle the changes and  submission of  data
+1st off- add some few parameters to the already created forms
