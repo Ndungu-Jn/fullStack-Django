@@ -143,3 +143,7 @@ inside components create a folder to hold forms. -- inside it add
 --select.jsx form for the league and the country
 --multiselect for the characteristics
 --descrription form for the Description
+
+
+ADDNG THE FUNCTIONALITY
+1. first off create a view for the footballclubview-- create a function for creating and then create a route in the Urls
