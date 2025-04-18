@@ -7,6 +7,7 @@ import SelectForm from "./forms/SelectForm";
 import MultiSelectForm from "./forms/MultiSelectForm";
 import DescriptionForm from "./forms/Description";
 import Button from "@mui/material/Button";
+import { useFormik } from "formik";
 
 const Create = () => {
   const [country, setCountry] = useState([]);
@@ -35,6 +36,20 @@ const Create = () => {
     GetData(); // ✅ Call the function!
   }, []);
 
+  const formik = useFormik({
+    initialValues: {
+      name: "Haiya, Imework",
+      description: "",
+      country: "",
+      league: "",
+      attendance: "",
+      city: "",
+      characteristic: [],
+    },
+  });
+
+  console.log("form values", formik.values);
+
   return (
     <div>
       <Box className={"TopBar"}>
@@ -49,12 +64,31 @@ const Create = () => {
 
       <Box className={"FormBox"}>
         <Box className={"FormArea"}>
-          <TextForm label={"Club name"}></TextForm>
+          <TextForm
+            label={"Club name"}
+            name="name"
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          ></TextForm>
           <Box sx={{ marginTop: "30px" }}>
-            <TextForm label={"City name"}></TextForm>
+            <TextForm
+              label={"City name"}
+              name="city"
+              value={formik.values.city}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            ></TextForm>
           </Box>
           <Box sx={{ marginTop: "30px" }}>
-            <SelectForm label={"League"} options={league}></SelectForm>
+            <SelectForm
+              label={"League"}
+              options={league}
+              name="league"
+              value={formik.values.league}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            ></SelectForm>
           </Box>
           <Box sx={{ marginTop: "30px" }}>
             <Button variant="contained">Submit the data</Button>
@@ -62,14 +96,31 @@ const Create = () => {
         </Box>
 
         <Box className={"FormArea"}>
-          <SelectForm label={"Country"} options={country}></SelectForm>
+          <SelectForm
+            label={"Country"}
+            options={country}
+            name="country"
+            value={formik.values.country}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          ></SelectForm>
           <Box sx={{ marginTop: "30px" }}>
-            <TextForm label={"Attendace"}></TextForm>
+            <TextForm
+              label={"Attendance"}
+              name="attendance"
+              value={formik.values.attendance}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            ></TextForm>
           </Box>
           <Box sx={{ marginTop: "30px" }}>
             <MultiSelectForm
               label={"Characteristics"}
               options={characteristic}
+              name="characteristic"
+              value={formik.values.characteristic}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             ></MultiSelectForm>
           </Box>
         </Box>
